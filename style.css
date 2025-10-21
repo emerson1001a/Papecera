@@ -1,0 +1,11 @@
+body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fffbee; color: #4e342e;}
+header {background-color: #ffcc80; text-align: center; padding: 15px;}
+nav button {margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #ffe0b2; cursor: pointer;}
+nav button:hover {background-color: #ffb74d;}
+.page {display: none; padding: 20px;}
+.page.active {display: block;}
+.produtos {display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;}
+.produto {background: #fff3e0; border-radius: 10px; padding: 15px; width: 200px; text-align: center;}
+footer {text-align: center; background: #ffcc80; padding: 10px; position: fixed; bottom: 0; width: 100%;}
+button {background-color: #ffd54f; border: none; border-radius: 5px; padding: 10px; cursor: pointer;}
+button:hover {background-color: #ffb300;}

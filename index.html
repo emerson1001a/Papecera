@@ -1,135 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Papecera Tecidos de Cera</title>
-<link rel="manifest" href="manifest.json">
-<style>
-:root{--bg:#fbf7f2;--ink:#3e2723;--brand:#f9b24d;--accent:#bf360c;}
-body{margin:0;font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink);}
-header{background:linear-gradient(90deg,#f9b24d 0%,#ffd87a 100%);padding:10px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
-.link-fake{font-weight:700;color:#4e342e;display:block;margin-bottom:5px;}
-nav{background:#fff3e6;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:10px;border-bottom:2px solid #ffcc80;}
-nav button{background:none;border:none;padding:8px 14px;font-weight:700;color:#4e342e;border-radius:8px;cursor:pointer;transition:.3s;}
-nav button.active,nav button:hover{background:var(--accent);color:#fff;}
-main{max-width:900px;margin:0 auto;padding:20px;}
-section{display:none;opacity:0;transition:opacity .4s;}
-section.active{display:block;opacity:1;}
-.product{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:14px;margin:16px 0;text-align:center;}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:700;}
-.btn:hover{background:#e64a19;}
-footer{background:var(--brand);text-align:center;padding:20px;margin-top:40px;color:#4e342e;font-weight:600;}
-.cart-box{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:16px;margin-top:20px;}
-h1,h2{text-align:center;}
-.fade{animation:fadeIn .4s;}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papecera – Tecidos de Cera</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <span class="link-fake">papecera-tecidos-de-cera.app</span>
-  <h1>Papecera Tecidos de Cera 🐝</h1>
-</header>
+  <header>
+    <h1>🧡 Papecera – o melhor tecido de cera do Brasil</h1>
+    <nav>
+      <button onclick="showPage('inicio')">Início</button>
+      <button onclick="showPage('produtos')">Produtos</button>
+      <button onclick="showPage('sobre')">Sobre</button>
+      <button onclick="showPage('contato')">Contato</button>
+      <button onclick="showPage('carrinho')">Carrinho</button>
+    </nav>
+  </header>
 
-<nav>
-  <button id="btn-inicio" class="active">Início</button>
-  <button id="btn-produtos">Produtos</button>
-  <button id="btn-sobre">Sobre</button>
-  <button id="btn-contato">Contato</button>
-  <button id="btn-carrinho">Carrinho (<span id="cart-count">0</span>)</button>
-</nav>
+  <main>
+    <section id="inicio" class="page active">
+      <h2>Bem-vindo à Papecera</h2>
+      <p>Nossos tecidos de cera reduzem o uso de plásticos descartáveis e ajudam o planeta.</p>
+      <p><strong>Promoção: 25% OFF!</strong></p>
+    </section>
 
-<main>
-  <section id="inicio" class="active fade">
-    <h2>Bem-vindo à Papecera</h2>
-    <p style="text-align:center;">Os melhores tecidos de cera do Brasil — sustentáveis, duráveis e cheios de cor!</p>
-    <p style="text-align:center;"><strong>25% OFF</strong> em todas as lojas, no site e nas redes sociais.</p>
-  </section>
+    <section id="produtos" class="page">
+      <h2>Galeria de Produtos</h2>
+      <div class="produtos">
+        <div class="produto"><h3>Tecido de Cera Pequeno</h3><button onclick="addCarrinho('Tecido Pequeno')">Adicionar ao Carrinho</button></div>
+        <div class="produto"><h3>Tecido de Cera Médio</h3><button onclick="addCarrinho('Tecido Médio')">Adicionar ao Carrinho</button></div>
+        <div class="produto"><h3>Tecido de Cera Grande</h3><button onclick="addCarrinho('Tecido Grande')">Adicionar ao Carrinho</button></div>
+      </div>
+    </section>
 
-  <section id="produtos">
-    <h2>Galeria de Produtos</h2>
-    <div class="product"><h3>Tecido de Cera</h3><p>R$ 39,90 / metro</p><button class="btn add" data-name="Tecido de Cera" data-price="39.9">Adicionar ao Carrinho</button></div>
-    <div class="product"><h3>Pano Grosso (Apoio de Panela)</h3><p>R$ 52,90</p><button class="btn add" data-name="Pano Grosso" data-price="52.9">Adicionar ao Carrinho</button></div>
-    <div class="product"><h3>Avental</h3><p>R$ 59,90</p><button class="btn add" data-name="Avental" data-price="59.9">Adicionar ao Carrinho</button></div>
-    <div class="product"><h3>Palmilha</h3><p>R$ 44,90</p><button class="btn add" data-name="Palmilha" data-price="44.9">Adicionar ao Carrinho</button></div>
-  </section>
+    <section id="sobre" class="page">
+      <h2>🐝 Sobre a Papecera</h2>
+      <p>A <strong>Papecera</strong> é uma empresa criada com o propósito de unir <strong>sustentabilidade</strong>, 
+      <strong>criatividade</strong> e <strong>inovação</strong>.</p>
 
-  <section id="sobre">
-    <h2>Sobre a Papecera</h2>
-    <p style="text-align:center;max-width:700px;margin:0 auto;">A Papecera nasceu da ideia de unir sustentabilidade e beleza. Usamos cera de abelha em tecidos para substituir o plástico descartável. Nossos produtos são duráveis, antibacterianos e compostáveis. Cada peça traz um toque artesanal e um propósito ecológico.</p>
-  </section>
+      <p><strong>Nossa empresa ajuda o planeta</strong>, porque os tecidos de cera 
+      <strong>reduzem o uso de plásticos descartáveis</strong>, são <strong>biodegradáveis</strong> e 
+      <strong>compostáveis</strong>.</p>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p style="text-align:center;">
-      📍 São Bernardo do Campo - SP<br>
-      📞 (11) 97049-480<br>
-      🌐 papecera-tecidos-de-cera.app<br>
-      Instagram: <strong>@papecera.oficial</strong><br>
-      Facebook: <strong>@papeceraoficialloja</strong>
-    </p>
-  </section>
+      <p>Vendemos <strong>tecidos de cera semelhantes ao papel</strong>, com <strong>mais durabilidade</strong>, 
+      <strong>impermeáveis</strong> e <strong>antibactericidas</strong>. Podem ser usados várias vezes para 
+      <strong>proteger alimentos</strong>, sendo uma alternativa sustentável ao plástico filme.</p>
 
-  <section id="carrinho">
-    <h2>🛒 Carrinho</h2>
-    <div class="cart-box">
-      <div id="cart-items"><p>Nenhum produto adicionado ainda.</p></div>
-      <p><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
-      <p><em>Desconto 25% aplicado automaticamente.</em></p>
-      <button id="comprar" class="btn">COMPRAR</button>
-      <button id="clear" class="btn" style="background:#999;">Limpar Carrinho</button>
-    </div>
-  </section>
-</main>
+      <p>A embalagem dos nossos produtos é <strong>de papel</strong>, com a logomarca 
+      <strong>"P + C"</strong>, que representa o nome <strong>Papecera</strong>. 
+      A abelha com a colmeia simboliza a origem natural da matéria-prima dos produtos — 
+      a <strong>cera de abelha</strong> — e o mel que escorre no logotipo reforça a ideia 
+      de <strong>doçura e cuidado com o planeta</strong>.</p>
 
-<footer>
-  Site criado por Miguel Alonso — © 2025 Papecera Tecidos de Cera — São Bernardo do Campo – SP
-</footer>
+      <p style="text-align:center;margin:20px 0;">
+        🧡 <em>Papecera, o melhor tecido de cera do Brasil.</em>
+      </p>
 
-<script>
-const sections=["inicio","produtos","sobre","contato","carrinho"];
-function show(id){
-  sections.forEach(s=>{
-    document.getElementById(s).classList.remove("active");
-    document.getElementById("btn-"+s)?.classList.remove("active");
-  });
-  document.getElementById(id).classList.add("active","fade");
-  document.getElementById("btn-"+id)?.classList.add("active");
-  if(id==="carrinho") updateCart();
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-sections.forEach(s=>{
-  const btn=document.getElementById("btn-"+s);
-  if(btn) btn.addEventListener("click",()=>show(s));
-});
+      <p>A retirada de cada sócio foi definida de forma justa e transparente: 
+      <strong>R$ 6.025,02</strong>.</p>
 
-let cart=[];
-function addToCart(name,price){
-  cart.push({name,price});
-  document.getElementById("cart-count").textContent=cart.length;
-  alert(name+" adicionado ao carrinho!");
-}
-function updateCart(){
-  const list=document.getElementById("cart-items");
-  if(cart.length===0){list.innerHTML="<p>Nenhum produto adicionado ainda.</p>";document.getElementById("cart-total").textContent="0.00";return;}
-  let total=cart.reduce((s,i)=>s+i.price,0)*0.75;
-  list.innerHTML="<ul>"+cart.map(i=>`<li>${i.name} — R$ ${i.price.toFixed(2)}</li>`).join("")+"</ul>";
-  document.getElementById("cart-total").textContent=total.toFixed(2);
-}
-document.querySelectorAll(".add").forEach(btn=>{
-  btn.addEventListener("click",()=>addToCart(btn.dataset.name,parseFloat(btn.dataset.price)));
-});
-document.getElementById("clear").addEventListener("click",()=>{cart=[];document.getElementById("cart-count").textContent="0";updateCart();});
-document.getElementById("comprar").addEventListener("click",()=>{
-  if(cart.length===0){alert("Seu carrinho está vazio!");return;}
-  alert("Pedido enviado! 🐝 Obrigado por comprar com a Papecera.");
-  cart=[];document.getElementById("cart-count").textContent="0";updateCart();
-});
+      <p><strong>Equipe fundadora:</strong></p>
+      <ul>
+        <li>Felipe Amato</li>
+        <li>Lucas Sorrentino de Mello</li>
+        <li>Miguel Antônio Vital Silva</li>
+        <li>Felipe Balsanelli-Rouco</li>
+        <li>Miguel Perear de Alonso</li>
+        <li>Lucas Lazzaretti Vieira</li>
+        <li>Gustavo Andrea Sacco</li>
+      </ul>
 
-if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
+      <p>A <strong>Papecera</strong> é a solução dos seus problemas!<br>
+      Você pode nos encontrar pelo <strong>WhatsApp, Facebook e Instagram</strong>.<br>
+      Em breve, lançaremos o <strong>site oficial</strong> e o <strong>nosso jingle</strong> — 
+      uma música que celebra a natureza, o cuidado e a reutilização.</p>
+    </section>
+
+    <section id="contato" class="page">
+      <h2>Contato</h2>
+      <p>Entre em contato conosco:</p>
+      <p>Email: contato@papecera-tecidos.com<br>Telefone: (11) 99999-9999</p>
+    </section>
+
+    <section id="carrinho" class="page">
+      <h2>🛒 Carrinho</h2>
+      <ul id="itens"></ul>
+      <button onclick="comprar()">COMPRAR</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Papecera – Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
