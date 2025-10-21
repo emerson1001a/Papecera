@@ -4,64 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Papecera Tecidos de Cera</title>
+<link rel="manifest" href="manifest.json">
 <style>
 :root{--bg:#fbf7f2;--ink:#3e2723;--brand:#f9b24d;--accent:#bf360c;}
 body{margin:0;font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink);}
-header{background:linear-gradient(90deg,#f9b24d 0%,#ffd87a 100%);padding:16px 20px;box-shadow:0 3px 10px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
-.topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:#4e342e;font-size:18px;}
-.monogram{display:grid;text-align:center;position:relative;}
-.monogram div{font-size:28px;color:#f6c84a;font-weight:900;line-height:0.9;}
-.monogram::after{content:"🍯";position:absolute;left:28px;top:10px;animation:drip 2s infinite;}
-@keyframes drip{0%,100%{opacity:0;transform:translateY(0);}50%{opacity:1;transform:translateY(6px);}}
-.bee{font-size:28px;animation:fly 3s infinite ease-in-out;}
-@keyframes fly{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
-nav{background:#fff3e6;border-bottom:2px solid #ffcc80;display:flex;justify-content:center;gap:10px;padding:10px;overflow-x:auto;}
-nav button{background:none;border:none;color:var(--ink);font-weight:700;padding:8px 14px;border-radius:8px;cursor:pointer;transition:all .3s;}
+header{background:linear-gradient(90deg,#f9b24d 0%,#ffd87a 100%);padding:10px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
+.link-fake{font-weight:700;color:#4e342e;display:block;margin-bottom:5px;}
+nav{background:#fff3e6;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:10px;border-bottom:2px solid #ffcc80;}
+nav button{background:none;border:none;padding:8px 14px;font-weight:700;color:#4e342e;border-radius:8px;cursor:pointer;transition:.3s;}
 nav button.active,nav button:hover{background:var(--accent);color:#fff;}
+main{max-width:900px;margin:0 auto;padding:20px;}
 section{display:none;opacity:0;transition:opacity .4s;}
 section.active{display:block;opacity:1;}
-.container{max-width:900px;margin:0 auto;padding:20px;}
-.product{background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:16px;margin:18px 0;text-align:center;}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:700;transition:.3s;}
+.product{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:14px;margin:16px 0;text-align:center;}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:700;}
 .btn:hover{background:#e64a19;}
-footer{background:var(--brand);text-align:center;padding:18px;color:#4e342e;margin-top:40px;font-weight:600;}
-.cart-box{background:#fff;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:16px;margin-top:20px;}
-h1,h2,h3{text-align:center;}
+footer{background:var(--brand);text-align:center;padding:20px;margin-top:40px;color:#4e342e;font-weight:600;}
+.cart-box{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:16px;margin-top:20px;}
+h1,h2{text-align:center;}
 .fade{animation:fadeIn .4s;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 </style>
 </head>
 <body>
 <header>
-  <div class="topbar">
-    <div class="logo">
-      <div class="monogram"><div>P</div><div>C</div></div>
-      <div class="bee">🐝</div>
-      <span>Papecera Tecidos de Cera</span>
-    </div>
-    <button id="cart-btn" class="btn">Carrinho (<span id="cart-count">0</span>)</button>
-  </div>
+  <span class="link-fake">papecera-tecidos-de-cera.app</span>
+  <h1>Papecera Tecidos de Cera 🐝</h1>
 </header>
 
 <nav>
   <button id="btn-inicio" class="active">Início</button>
-  <button id="btn-galeria">Produtos</button>
+  <button id="btn-produtos">Produtos</button>
   <button id="btn-sobre">Sobre</button>
   <button id="btn-contato">Contato</button>
+  <button id="btn-carrinho">Carrinho (<span id="cart-count">0</span>)</button>
 </nav>
 
-<main class="container">
+<main>
   <section id="inicio" class="active fade">
-    <p style="text-align:center;"><em>Este site mostra o uso de cera de abelha para tecidos ecológicos e reutilizáveis.</em></p>
-    <h1>Papecera — O melhor tecido do Brasil</h1>
-    <div class="product">
-      <h3>Bem-vindo(a)!</h3>
-      <p>Conheça nossos produtos feitos com cera natural e receba 25% de desconto em todas as lojas e redes sociais!</p>
-    </div>
+    <h2>Bem-vindo à Papecera</h2>
+    <p style="text-align:center;">Os melhores tecidos de cera do Brasil — sustentáveis, duráveis e cheios de cor!</p>
+    <p style="text-align:center;"><strong>25% OFF</strong> em todas as lojas, no site e nas redes sociais.</p>
   </section>
 
-  <section id="galeria">
+  <section id="produtos">
     <h2>Galeria de Produtos</h2>
     <div class="product"><h3>Tecido de Cera</h3><p>R$ 39,90 / metro</p><button class="btn add" data-name="Tecido de Cera" data-price="39.9">Adicionar ao Carrinho</button></div>
     <div class="product"><h3>Pano Grosso (Apoio de Panela)</h3><p>R$ 52,90</p><button class="btn add" data-name="Pano Grosso" data-price="52.9">Adicionar ao Carrinho</button></div>
@@ -71,10 +57,7 @@ h1,h2,h3{text-align:center;}
 
   <section id="sobre">
     <h2>Sobre a Papecera</h2>
-    <p style="text-align:center;max-width:700px;margin:0 auto;">
-      A Papecera nasceu da ideia de unir sustentabilidade e beleza. Usamos cera de abelha em tecidos para substituir o plástico descartável.
-      Nossos produtos são duráveis, antibacterianos e compostáveis. Cada peça traz um toque artesanal e um propósito ecológico.
-    </p>
+    <p style="text-align:center;max-width:700px;margin:0 auto;">A Papecera nasceu da ideia de unir sustentabilidade e beleza. Usamos cera de abelha em tecidos para substituir o plástico descartável. Nossos produtos são duráveis, antibacterianos e compostáveis. Cada peça traz um toque artesanal e um propósito ecológico.</p>
   </section>
 
   <section id="contato">
@@ -82,7 +65,7 @@ h1,h2,h3{text-align:center;}
     <p style="text-align:center;">
       📍 São Bernardo do Campo - SP<br>
       📞 (11) 97049-480<br>
-      🌐 papecera-tecidos-de-cera<br>
+      🌐 papecera-tecidos-de-cera.app<br>
       Instagram: <strong>@papecera.oficial</strong><br>
       Facebook: <strong>@papeceraoficialloja</strong>
     </p>
@@ -94,7 +77,8 @@ h1,h2,h3{text-align:center;}
       <div id="cart-items"><p>Nenhum produto adicionado ainda.</p></div>
       <p><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
       <p><em>Desconto 25% aplicado automaticamente.</em></p>
-      <button id="clear" class="btn">Limpar Carrinho</button>
+      <button id="comprar" class="btn">COMPRAR</button>
+      <button id="clear" class="btn" style="background:#999;">Limpar Carrinho</button>
     </div>
   </section>
 </main>
@@ -104,20 +88,23 @@ h1,h2,h3{text-align:center;}
 </footer>
 
 <script>
-let cart=[];
-
-// Alternar seções
-function showSection(id){
-  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+const sections=["inicio","produtos","sobre","contato","carrinho"];
+function show(id){
+  sections.forEach(s=>{
+    document.getElementById(s).classList.remove("active");
+    document.getElementById("btn-"+s)?.classList.remove("active");
+  });
   document.getElementById(id).classList.add("active","fade");
-  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
-  const btn=document.querySelector("#btn-"+id);
-  if(btn) btn.classList.add("active");
+  document.getElementById("btn-"+id)?.classList.add("active");
   if(id==="carrinho") updateCart();
   window.scrollTo({top:0,behavior:"smooth"});
 }
+sections.forEach(s=>{
+  const btn=document.getElementById("btn-"+s);
+  if(btn) btn.addEventListener("click",()=>show(s));
+});
 
-// Carrinho
+let cart=[];
 function addToCart(name,price){
   cart.push({name,price});
   document.getElementById("cart-count").textContent=cart.length;
@@ -125,29 +112,24 @@ function addToCart(name,price){
 }
 function updateCart(){
   const list=document.getElementById("cart-items");
-  if(cart.length===0){
-    list.innerHTML="<p>Nenhum produto adicionado ainda.</p>";
-    document.getElementById("cart-total").textContent="0.00";
-    return;
-  }
+  if(cart.length===0){list.innerHTML="<p>Nenhum produto adicionado ainda.</p>";document.getElementById("cart-total").textContent="0.00";return;}
   let total=cart.reduce((s,i)=>s+i.price,0)*0.75;
   list.innerHTML="<ul>"+cart.map(i=>`<li>${i.name} — R$ ${i.price.toFixed(2)}</li>`).join("")+"</ul>";
   document.getElementById("cart-total").textContent=total.toFixed(2);
 }
-function clearCart(){cart=[];document.getElementById("cart-count").textContent="0";updateCart();}
-
-// Listeners de toque/click compatíveis com iPhone
-document.getElementById("btn-inicio").addEventListener("click",()=>showSection("inicio"));
-document.getElementById("btn-galeria").addEventListener("click",()=>showSection("galeria"));
-document.getElementById("btn-sobre").addEventListener("click",()=>showSection("sobre"));
-document.getElementById("btn-contato").addEventListener("click",()=>showSection("contato"));
-document.getElementById("cart-btn").addEventListener("click",()=>showSection("carrinho"));
-document.getElementById("clear").addEventListener("click",clearCart);
-
-// Produtos
 document.querySelectorAll(".add").forEach(btn=>{
   btn.addEventListener("click",()=>addToCart(btn.dataset.name,parseFloat(btn.dataset.price)));
 });
+document.getElementById("clear").addEventListener("click",()=>{cart=[];document.getElementById("cart-count").textContent="0";updateCart();});
+document.getElementById("comprar").addEventListener("click",()=>{
+  if(cart.length===0){alert("Seu carrinho está vazio!");return;}
+  alert("Pedido enviado! 🐝 Obrigado por comprar com a Papecera.");
+  cart=[];document.getElementById("cart-count").textContent="0";updateCart();
+});
+
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("service-worker.js");
+}
 </script>
 </body>
 </html>

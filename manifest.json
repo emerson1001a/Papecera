@@ -1,0 +1,15 @@
+{
+  "name": "Papecera Tecidos de Cera",
+  "short_name": "Papecera",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fbf7f2",
+  "theme_color": "#f9b24d",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/305/305972.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
