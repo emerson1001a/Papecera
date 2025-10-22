@@ -1,17 +1,1 @@
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("papecera-cache-v1").then(cache => {
-      return cache.addAll([
-        "index.html",
-        "manifest.json"
-      ]);
-    })
-  );
-});
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(resp => {
-      return resp || fetch(e.request);
-    })
-  );
-});
+self.addEventListener('install', function(e){e.waitUntil(caches.open('papecera-v6').then(function(cache){return cache.addAll(['index.html','style.css','script.js','logo.svg']));});});self.addEventListener('fetch', function(e){e.respondWith(caches.match(e.request).then(function(r){return r||fetch(e.request);}));});

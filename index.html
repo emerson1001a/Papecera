@@ -1,99 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papecera – Tecidos de Cera</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>🧡 Papecera – o melhor tecido de cera do Brasil</h1>
-    <nav>
-      <button onclick="showPage('inicio')">Início</button>
-      <button onclick="showPage('produtos')">Produtos</button>
-      <button onclick="showPage('sobre')">Sobre</button>
-      <button onclick="showPage('contato')">Contato</button>
-      <button onclick="showPage('carrinho')">Carrinho</button>
-    </nav>
-  </header>
-
-  <main>
-    <section id="inicio" class="page active">
-      <h2>Bem-vindo à Papecera</h2>
-      <p>Nossos tecidos de cera reduzem o uso de plásticos descartáveis e ajudam o planeta.</p>
-      <p><strong>Promoção: 25% OFF!</strong></p>
-    </section>
-
-    <section id="produtos" class="page">
-      <h2>Galeria de Produtos</h2>
-      <div class="produtos">
-        <div class="produto"><h3>Tecido de Cera Pequeno</h3><button onclick="addCarrinho('Tecido Pequeno')">Adicionar ao Carrinho</button></div>
-        <div class="produto"><h3>Tecido de Cera Médio</h3><button onclick="addCarrinho('Tecido Médio')">Adicionar ao Carrinho</button></div>
-        <div class="produto"><h3>Tecido de Cera Grande</h3><button onclick="addCarrinho('Tecido Grande')">Adicionar ao Carrinho</button></div>
-      </div>
-    </section>
-
-    <section id="sobre" class="page">
-      <h2>🐝 Sobre a Papecera</h2>
-      <p>A <strong>Papecera</strong> é uma empresa criada com o propósito de unir <strong>sustentabilidade</strong>, 
-      <strong>criatividade</strong> e <strong>inovação</strong>.</p>
-
-      <p><strong>Nossa empresa ajuda o planeta</strong>, porque os tecidos de cera 
-      <strong>reduzem o uso de plásticos descartáveis</strong>, são <strong>biodegradáveis</strong> e 
-      <strong>compostáveis</strong>.</p>
-
-      <p>Vendemos <strong>tecidos de cera semelhantes ao papel</strong>, com <strong>mais durabilidade</strong>, 
-      <strong>impermeáveis</strong> e <strong>antibactericidas</strong>. Podem ser usados várias vezes para 
-      <strong>proteger alimentos</strong>, sendo uma alternativa sustentável ao plástico filme.</p>
-
-      <p>A embalagem dos nossos produtos é <strong>de papel</strong>, com a logomarca 
-      <strong>"P + C"</strong>, que representa o nome <strong>Papecera</strong>. 
-      A abelha com a colmeia simboliza a origem natural da matéria-prima dos produtos — 
-      a <strong>cera de abelha</strong> — e o mel que escorre no logotipo reforça a ideia 
-      de <strong>doçura e cuidado com o planeta</strong>.</p>
-
-      <p style="text-align:center;margin:20px 0;">
-        🧡 <em>Papecera, o melhor tecido de cera do Brasil.</em>
-      </p>
-
-      <p>A retirada de cada sócio foi definida de forma justa e transparente: 
-      <strong>R$ 6.025,02</strong>.</p>
-
-      <p><strong>Equipe fundadora:</strong></p>
-      <ul>
-        <li>Felipe Amato</li>
-        <li>Lucas Sorrentino de Mello</li>
-        <li>Miguel Antônio Vital Silva</li>
-        <li>Felipe Balsanelli-Rouco</li>
-        <li>Miguel Perear de Alonso</li>
-        <li>Lucas Lazzaretti Vieira</li>
-        <li>Gustavo Andrea Sacco</li>
-      </ul>
-
-      <p>A <strong>Papecera</strong> é a solução dos seus problemas!<br>
-      Você pode nos encontrar pelo <strong>WhatsApp, Facebook e Instagram</strong>.<br>
-      Em breve, lançaremos o <strong>site oficial</strong> e o <strong>nosso jingle</strong> — 
-      uma música que celebra a natureza, o cuidado e a reutilização.</p>
-    </section>
-
-    <section id="contato" class="page">
-      <h2>Contato</h2>
-      <p>Entre em contato conosco:</p>
-      <p>Email: contato@papecera-tecidos.com<br>Telefone: (11) 99999-9999</p>
-    </section>
-
-    <section id="carrinho" class="page">
-      <h2>🛒 Carrinho</h2>
-      <ul id="itens"></ul>
-      <button onclick="comprar()">COMPRAR</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Papecera – Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="pt-br"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Papecera — o melhor tecido de cera do Brasil</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"></head><body>
+<header class="header"><div class="header-inner"><div class="logo"><img src="logo.svg" alt="logo"></div><div style="margin-left:8px"><strong>Papecera Tecidos de Cera</strong><div style="font-size:12px;color:#6d4c41">Papecera — o melhor tecido de cera do Brasil</div></div><div style="margin-left:auto" class="promo">25% OFF</div></div></header>
+<nav class="nav"><div class="inner"><button data-nav="inicio">Início</button><button data-nav="produtos">Produtos</button><button data-nav="sobre">Sobre</button><button data-nav="contato">Contato</button><button data-nav="carrinho">Carrinho (<span id="cart-count">0</span>)</button></div></nav>
+<main class="container">
+<section id="inicio" class="page"><div class="card"><h1>Bem-vindo à Papecera</h1><p>Produtos sustentáveis feitos com cera de abelha. Nosso tecido é impermeável, antibactericida e reutilizável.</p></div></section>
+<section id="produtos" class="page"><h2>Produtos</h2><div class="grid"><div class='card'><img src='tecido_cera.svg' alt='Tecido de Cera (metro)'/><h3>Tecido de Cera (metro)</h3><p style='color:#6d4c41'>Tecido encerado ideal para proteger alimentos.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='tecido_cera.svg' data-name='Tecido de Cera (metro)' data-price='39.9' data-desc='Tecido encerado ideal para proteger alimentos.'>Ver detalhes</button><button class='add-to-cart' data-name='Tecido de Cera (metro)'>Adicionar ao carrinho</button></div></div><div class='card'><img src='pano_grosso.svg' alt='Pano Grosso - Apoio de Panela'/><h3>Pano Grosso - Apoio de Panela</h3><p style='color:#6d4c41'>Pano grosso em tecido de cera para apoio de panela.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='pano_grosso.svg' data-name='Pano Grosso - Apoio de Panela' data-price='52.9' data-desc='Pano grosso em tecido de cera para apoio de panela.'>Ver detalhes</button><button class='add-to-cart' data-name='Pano Grosso - Apoio de Panela'>Adicionar ao carrinho</button></div></div><div class='card'><img src='avental.svg' alt='Avental de Cera'/><h3>Avental de Cera</h3><p style='color:#6d4c41'>Avental impermeável e resistente.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='avental.svg' data-name='Avental de Cera' data-price='59.9' data-desc='Avental impermeável e resistente.'>Ver detalhes</button><button class='add-to-cart' data-name='Avental de Cera'>Adicionar ao carrinho</button></div></div><div class='card'><img src='palmilha.svg' alt='Palmilha Natural'/><h3>Palmilha Natural</h3><p style='color:#6d4c41'>Palmilha revestida com tecido de cera.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='palmilha.svg' data-name='Palmilha Natural' data-price='44.9' data-desc='Palmilha revestida com tecido de cera.'>Ver detalhes</button><button class='add-to-cart' data-name='Palmilha Natural'>Adicionar ao carrinho</button></div></div><div class='card'><img src='tecido_medio.svg' alt='Tecido de Cera Médio'/><h3>Tecido de Cera Médio</h3><p style='color:#6d4c41'>Tecido encerado médio.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='tecido_medio.svg' data-name='Tecido de Cera Médio' data-price='49.9' data-desc='Tecido encerado médio.'>Ver detalhes</button><button class='add-to-cart' data-name='Tecido de Cera Médio'>Adicionar ao carrinho</button></div></div><div class='card'><img src='tecido_grande.svg' alt='Tecido de Cera Grande'/><h3>Tecido de Cera Grande</h3><p style='color:#6d4c41'>Tecido encerado em metro para grandes projetos.</p><div style='display:flex;gap:8px;justify-content:center;margin-top:8px'><button class='details-btn' data-img='tecido_grande.svg' data-name='Tecido de Cera Grande' data-price='89.9' data-desc='Tecido encerado em metro para grandes projetos.'>Ver detalhes</button><button class='add-to-cart' data-name='Tecido de Cera Grande'>Adicionar ao carrinho</button></div></div></div></section><section id="sobre" class="page"><h2>Sobre</h2><p>Nossa empresa ajuda o planeta, porque os tecidos de cera reduzem o uso de plásticos descartáveis, são biodegradáveis e compostáveis. Vendemos tecidos de cera semelhantes ao papel, com mais durabilidade, impermeáveis e antibactericidas.</p></section>
+<section id="contato" class="page"><h2>Contato</h2><p>Email: contato@papecera-tecidos.com.br<br>Telefone: (11) 97049-480<br>Instagram: @papecera.oficial</p></section>
+<section id="carrinho" class="page"><h2>Carrinho</h2><div class='card'><ul id='cart-list'><li>(vazio)</li></ul><div style='margin-top:12px'><button id='buy-btn' class='buy-btn'>COMPRAR</button></div></div></section>
+</main><div id='modal' class='modal'><div class='box'><button id='modal-close'>Fechar</button><div style='display:flex;gap:12px'><img id='modal-img' src='tecido_cera.svg' style='width:45%'/><div><h3 id='modal-title'></h3><p id='modal-desc'></p><p id='modal-price' style='font-weight:800;color:#bf6a00'></p></div></div></div></div>
+<footer class='footer'>© 2025 Papecera — papecera-tecidos-de-cera</footer><script src='script.js'></script></body></html>
